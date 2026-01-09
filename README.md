@@ -1,228 +1,195 @@
 # RS_Task – JDBC with Oracle Database
 
-> A comprehensive hands-on project for mastering Java Database Connectivity with Oracle Database through practical implementation and real-world scenarios.
+A hands-on JDBC project covering database connectivity between Java applications and Oracle Database through 8 practical tasks.
 
 ---
 
-## 📖 Overview
+## About This Project
 
-This repository is a structured collection of JDBC-based Java tasks designed to build a solid foundation in database connectivity. The project emphasizes **practical learning** through implementation of real-world JDBC operations including database connections, SQL query execution, user input handling, and result processing using industry best practices.
+This repository contains 8 JDBC tasks that I created while learning how to connect Java applications with Oracle Database. Each task focuses on different aspects of database operations - from basic connection setup to handling complex queries with user input.
 
----
-
-## 🎯 Project Objectives
-
-- **Master JDBC Fundamentals** – Learn how Java applications connect to Oracle Database
-- **Understand Architecture** – Deep dive into JDBC workflow and architecture
-- **Implement CRUD Operations** – Practice Create, Read, Update, Delete operations
-- **Resource Management** – Handle database resources efficiently and safely
-- **Real-World Experience** – Gain practical skills for professional Java development
+The project follows a step-by-step approach, making it easier to understand JDBC concepts through practical implementation.
 
 ---
 
-## 📁 Project Structure
+## What You'll Learn
+
+- How to connect Java applications with Oracle Database
+- JDBC architecture and workflow
+- Performing CRUD operations (Create, Read, Update, Delete)
+- Handling database resources properly
+- Working with PreparedStatement to prevent SQL injection
+- Managing exceptions and closing connections safely
+
+---
+
+## Project Structure
 
 ```
-RS_Task
+RS_Task/
 │
 ├── src/
-│   ├── Task1/           # Database Connection Setup
-│   ├── Task2/           # Insert Operations
-│   ├── Task3/           # Select Queries & Data Retrieval
-│   ├── Task8/           # Advanced Query Operations
-│   │   └── Main.java
-│   └── ...
+│   ├── Task1/          → JDBC Connection Setup
+│   ├── Task2/          → Insert Records into Database
+│   ├── Task3/          → Fetch Data using SELECT Query
+│   ├── Task4/          → Fetch Multiple Records using ResultSet
+│   ├── Task5/          → PreparedStatement Usage
+│   ├── Task6/          → User Input Based Query Execution
+│   ├── Task7/          → Exception Handling & Resource Management
+│   └── Task8/          → Complete JDBC Flow (End-to-End)
 │
 ├── README.md
 └── .gitignore
 ```
 
-### 📂 Task Breakdown
+---
 
-Each `TaskX` folder represents an independent JDBC module focusing on specific concepts:
+## Task Details
 
-| Task | Focus Area | Key Concepts |
-|------|-----------|--------------|
-| **Task 1** | Database Connection | DriverManager, Connection establishment |
-| **Task 2** | Insert Operations | PreparedStatement, Data insertion |
-| **Task 3** | Data Retrieval | ResultSet, SELECT queries |
-| **Task 8** | Dynamic Queries | User input handling, filtered results |
+### Task 1: JDBC Connection Setup
+Learn how to establish a connection with Oracle Database using JDBC Driver, DriverManager, and Connection object.
+
+### Task 2: Insert Records into Database
+Practice inserting data into database tables using Statement and PreparedStatement.
+
+### Task 3: Fetch Data using SELECT Query
+Retrieve data from database and access column values using ResultSet.
+
+### Task 4: Fetch Multiple Records using ResultSet
+Learn to iterate through multiple records returned by a SELECT query.
+
+### Task 5: PreparedStatement Usage
+Use parameterized queries to prevent SQL injection and make your code more secure.
+
+### Task 6: User Input Based Query Execution
+Take user input using Scanner class and execute dynamic queries based on that input.
+
+### Task 7: Exception Handling & Resource Management
+Properly handle SQLException and close database resources using try-catch-finally blocks.
+
+### Task 8: Complete JDBC Flow (End-to-End)
+Build a complete application that demonstrates the entire JDBC workflow from connection to query execution.
 
 ---
 
-## 🛠 Technologies & Tools
+## Technologies Used
 
-| Technology | Purpose |
-|:----------:|:-------:|
-| **Java** | Core Programming Language |
-| **JDBC** | Database Connectivity API |
-| **Oracle Database** | Database Management System |
-| **SQL** | Query Language |
-| **IntelliJ IDEA** | Development IDE |
-| **Git & GitHub** | Version Control |
+- **Java** - Core programming language
+- **JDBC** - Java Database Connectivity API
+- **Oracle Database** - Database management system
+- **SQL** - Structured Query Language
+- **IntelliJ IDEA** - IDE for development
+- **Git & GitHub** - Version control
 
 ---
 
-## 🧠 JDBC Concepts Covered
+## Database Setup
 
-This project provides comprehensive coverage of essential JDBC concepts:
+Before running the tasks, make sure you have:
 
-### Core Components
-- **JDBC Driver Loading** – Understanding driver registration
-- **Connection Management** – Using DriverManager and Connection objects
-- **Statement Types** – Statement vs PreparedStatement vs CallableStatement
-- **Result Processing** – Working with ResultSet and ResultSetMetaData
+1. Oracle Database installed and running on your system
+2. Created the required tables in your database
+3. Downloaded Oracle JDBC Driver (ojdbc.jar)
 
-### SQL Operations
-- **SELECT Queries** – Data retrieval and filtering
-- **INSERT Operations** – Adding new records
-- **UPDATE Statements** – Modifying existing data
-- **Dynamic Queries** – User-driven query execution
+### Connection Configuration
 
-### Best Practices
-- **Exception Handling** – Proper SQLException management
-- **Resource Management** – Closing connections, statements, and result sets
-- **SQL Injection Prevention** – Using PreparedStatement securely
-- **User Input Handling** – Validating and processing user data
-
----
-
-## ⚙️ Database Configuration
-
-### Prerequisites
-
-Before running the project, ensure the following are set up:
-
-- Oracle Database installed and running
-- Required database tables created
-- Oracle JDBC Driver (`ojdbc.jar`) added to classpath
-
-### Sample Connection Configuration
+Here's how the database connection is configured:
 
 ```java
-// Database connection parameters
 String url = "jdbc:oracle:thin:@localhost:1521:xe";
 String username = "system";
 String password = "oracle";
 
-// Establishing connection
-Connection conn = DriverManager.getConnection(url, username, password);
+Connection connection = DriverManager.getConnection(url, username, password);
 ```
 
-> **⚠️ Important:** Update these credentials based on your local Oracle database configuration.
-
-### JDBC Driver Setup
-
-1. Download Oracle JDBC Driver (ojdbc8.jar or later)
-2. Add to your project classpath:
-   - **IntelliJ IDEA:** File → Project Structure → Libraries → Add JAR
-   - **Eclipse:** Right-click project → Build Path → Add External JARs
+Make sure to update the username, password, and database URL according to your setup.
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
-Follow these steps to get started:
-
-### 1. Clone the Repository
-
+**Step 1: Clone the repository**
 ```bash
 git clone https://github.com/Mahesh-Nikas/RS_Task.git
 cd RS_Task
 ```
 
-### 2. Open in IntelliJ IDEA
-
+**Step 2: Open in IntelliJ IDEA**
 - Launch IntelliJ IDEA
-- Select **Open** and navigate to the cloned repository
-- Wait for project indexing to complete
+- Click on "Open" and select the project folder
 
-### 3. Configure JDBC Driver
+**Step 3: Add JDBC Driver**
+- Go to File → Project Structure → Libraries
+- Click the + button and add your ojdbc.jar file
 
-- Go to **File → Project Structure → Libraries**
-- Click **+** and select **Java**
-- Add the `ojdbc.jar` file to your project
-
-### 4. Run a Task
-
-- Navigate to: `src → TaskX → Main.java`
-- Right-click on `Main.java`
-- Select **Run 'Main.main()'**
-
-### 5. Provide Input (if required)
-
-- Some tasks require user input via console
-- Follow the on-screen prompts
+**Step 4: Run a task**
+- Navigate to src → TaskX → Main.java
+- Right-click on Main.java and select "Run"
 
 ---
 
-## 🎓 Learning Outcomes
+## Key JDBC Concepts Covered
 
-By completing this project, you will:
+**Core Components:**
+- Loading and registering JDBC driver
+- Creating database connections with DriverManager
+- Using Statement vs PreparedStatement
+- Working with ResultSet to process query results
 
-| Skill | Description |
-|-------|-------------|
-| **JDBC Mastery** | Deep understanding of JDBC workflow and architecture |
-| **Database Operations** | Hands-on experience with Oracle SQL from Java |
-| **Application Development** | Confidence in building database-driven applications |
-| **Best Practices** | Knowledge of resource management and error handling |
-| **Interview Readiness** | Better preparation for Java/JDBC technical interviews |
-| **Version Control** | Practical Git and GitHub workflow experience |
+**Database Operations:**
+- Executing SELECT queries to retrieve data
+- INSERT operations to add new records
+- UPDATE operations to modify existing data
+- Passing parameters safely to SQL queries
 
----
-
-## 🚧 Project Status
-
-**Status:** Active Development
-
-### Ongoing Improvements
-
-- Continuously updated with new JDBC tasks
-- Code refactored for better performance and readability
-- Documentation enhanced with detailed explanations
-- Additional test cases and scenarios being added
+**Best Practices:**
+- Handling SQLException properly
+- Closing database connections, statements, and result sets
+- Preventing SQL injection attacks
+- Writing clean and maintainable code
 
 ---
 
-## 🤝 Contributing
+## What I Learned
 
-Contributions, issues, and feature requests are welcome! Feel free to:
+Working through these 8 tasks helped me:
 
-- Report bugs
-- Suggest new tasks or improvements
-- Submit pull requests
+- Understand how JDBC connects Java with databases
+- Get comfortable writing SQL queries in Java
+- Learn to handle database errors and exceptions
+- Build confidence in creating database-driven applications
+- Prepare better for technical interviews
 
 ---
 
-## 👨‍💻 Author
+## Current Status
+
+This project is actively maintained as I continue learning. I regularly update the code to:
+- Add new tasks and examples
+- Improve code quality and structure
+- Fix any issues or bugs
+- Apply better practices as I learn them
+
+---
+
+## Contributing
+
+If you find any issues or have suggestions for improvement:
+- Open an issue on GitHub
+- Submit a pull request
+- Share your feedback
+
+All contributions are welcome!
+
+---
+
+## Author
 
 **Mahesh Nikas**  
-*Java Developer | JDBC & Oracle Enthusiast*
+Java Developer | Learning JDBC & Oracle
 
-- **GitHub:** [https://github.com/Mahesh-Nikas](https://github.com/Mahesh-Nikas)
-- **LinkedIn:** [Connect with me](#)
-- **Email:** [Contact me](#)
+GitHub: [github.com/Mahesh-Nikas](https://github.com/Mahesh-Nikas)
 
 ---
 
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-### ⭐ Star this repository if you find it helpful!
-
-**Made with ❤️ by Mahesh Nikas**
-
----
-
-## 📞 Support
-
-If you have any questions or need help with the project:
-
-1. Open an issue on GitHub
-2. Check existing documentation
-3. Reach out via email or LinkedIn
-
-Happy Learning! 🚀
