@@ -6,6 +6,7 @@ public class Main_Menu {
     public static void main(String[] arg){
         for(int i=0; i>=0;i++) {
             System.out.println(".... MENU ........");
+            System.out.println("Name : Mahesh Nikas, Branch : IT");
             System.out.println("Choose option 1: insert in students , 2: update in students , 3:Delete Students , 4: select students , 5: exit");
             Scanner sc = new Scanner(System.in);
             int choice = sc.nextInt();
