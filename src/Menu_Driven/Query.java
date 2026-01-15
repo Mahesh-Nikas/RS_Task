@@ -26,6 +26,8 @@ public class Query {
                        stmt.setInt(4,Age);
                        int count=stmt.executeUpdate();
                        System.out.println(count+" Rows Inserted ");
+                       stmt.close();
+                       con.close();
                    }
                    catch (Exception e){
                        e.printStackTrace();
@@ -44,6 +46,8 @@ public class Query {
                 stmt.setInt(2,Student_id);
                 int count = stmt.executeUpdate();
                 System.out.println(count+" rows update");
+                stmt.close();
+                con.close();
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -59,6 +63,8 @@ public class Query {
                 stmt.setInt(1,id);
                 int count = stmt.executeUpdate();
                 System.out.println(count+" rows deleted");
+                stmt.close();
+                con.close();
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -73,6 +79,8 @@ public class Query {
                 while (rs.next()){
                     System.out.println("\t"+rs.getInt("student_id")+"\t"+rs.getString("name")+"\t"+rs.getString("course")+"\t"+rs.getInt("age"));
                 }
+                stmt.close();
+                con.close();
             }
             catch (Exception e){
                 e.printStackTrace();
